@@ -15,7 +15,7 @@ export default function HistorySection({ acts }: HistorySectionProps) {
       
       <div className="space-y-3 sm:space-y-4 max-h-[600px] overflow-y-auto pr-2">
         {recentActs.length === 0 ? (
-          <p className="text-center text-gray-500 py-8">No acts of kindness recorded yet. Start today!</p>
+          <p className="text-center text-gray-500 py-8">No acts of racism recorded yet. Start today!</p>
         ) : (
           recentActs.map((act) => (
             <div

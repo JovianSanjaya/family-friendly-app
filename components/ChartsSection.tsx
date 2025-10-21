@@ -105,7 +105,7 @@ export default function ChartsSection({ acts, stats }: ChartsSectionProps) {
           data: {
             labels: last30Days.map(d => d.date),
             datasets: [{
-              label: 'Acts of Kindness',
+              label: 'Acts of Racism',
               data: last30Days.map(d => d.count),
               borderColor: '#FF6B9D',
               backgroundColor: 'rgba(255, 107, 157, 0.1)',
