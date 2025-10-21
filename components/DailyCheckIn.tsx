@@ -116,7 +116,7 @@ export default function DailyCheckIn({ onSubmit, checkedInToday }: DailyCheckInP
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               rows={4}
-              placeholder="What kind thing did you do today?"
+              placeholder="What racist thing did you do today?"
               className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all resize-none text-gray-900"
             />
             

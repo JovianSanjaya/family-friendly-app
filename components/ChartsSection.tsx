@@ -63,7 +63,7 @@ export default function ChartsSection({ acts, stats }: ChartsSectionProps) {
               },
               title: {
                 display: true,
-                text: 'Kindness by Category',
+                text: 'Racism by Category',
                 font: {
                   size: 18,
                   weight: 'bold',
