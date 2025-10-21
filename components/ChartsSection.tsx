@@ -173,19 +173,19 @@ export default function ChartsSection({ acts, stats }: ChartsSectionProps) {
   }, [acts, stats]);
 
   return (
-    <section className="bg-white p-8 rounded-2xl shadow-lg">
-      <h2 className="text-3xl font-bold text-gray-800 mb-6">Your Racism Trends</h2>
+    <section className="bg-white p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg">
+      <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 sm:mb-6">Your Racism Trends</h2>
       
-      <div className="grid md:grid-cols-2 gap-8">
-        <div className="bg-gradient-to-br from-pink-50 to-purple-50 p-6 rounded-xl">
-          <div style={{ height: '300px' }}>
-            <canvas ref={categoryChartRef}></canvas>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+        <div className="bg-gradient-to-br from-pink-50 to-purple-50 p-4 sm:p-6 rounded-xl">
+          <div className="relative w-full" style={{ height: '250px', minHeight: '200px' }}>
+            <canvas ref={categoryChartRef} className="w-full h-full"></canvas>
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl">
-          <div style={{ height: '300px' }}>
-            <canvas ref={trendChartRef}></canvas>
+        <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-4 sm:p-6 rounded-xl">
+          <div className="relative w-full" style={{ height: '250px', minHeight: '200px' }}>
+            <canvas ref={trendChartRef} className="w-full h-full"></canvas>
           </div>
         </div>
       </div>

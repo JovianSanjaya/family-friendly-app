@@ -25,6 +25,15 @@ export default function CalendarSection({ acts }: CalendarSectionProps) {
   const hasKindnessAct = (day: number) => {
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();
+    const checkDate = new Date(year, month, day);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    
+    // Don't mark future dates
+    if (checkDate > today) {
+      return false;
+    }
+    
     const dateString = new Date(year, month, day).toISOString().split('T')[0];
     return acts.some(act => act.date === dateString);
   };
