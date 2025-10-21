@@ -97,7 +97,7 @@ export default function DailyCheckIn({ onSubmit, checkedInToday }: DailyCheckInP
               id="category"
               value={category}
               onChange={(e) => setCategory(e.target.value as KindnessCategory)}
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all"
+              className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all text-gray-900"
             >
               {Object.entries(CATEGORY_LABELS).map(([value, label]) => (
                 <option key={value} value={value}>
@@ -109,7 +109,7 @@ export default function DailyCheckIn({ onSubmit, checkedInToday }: DailyCheckInP
 
           <div className="mb-6">
             <label htmlFor="description" className="block text-sm font-semibold text-gray-700 mb-2">
-              Describe your act of kindness
+              Describe your act of racism
             </label>
             <textarea
               id="description"
@@ -117,7 +117,7 @@ export default function DailyCheckIn({ onSubmit, checkedInToday }: DailyCheckInP
               onChange={(e) => setDescription(e.target.value)}
               rows={4}
               placeholder="What kind thing did you do today?"
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all resize-none"
+              className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all resize-none text-gray-900"
             />
             
             <div className="flex gap-3 mt-3">

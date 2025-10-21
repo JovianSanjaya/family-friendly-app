@@ -13,8 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Daily Racism Tracker",
-  description: "Track your daily acts of racism and build racist habits",
+  title: "Daily Kindness Tracker",
+  description: "Track your daily acts of kindness and build positive habits",
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
