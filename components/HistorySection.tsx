@@ -37,6 +37,7 @@ export default function HistorySection({ acts }: HistorySectionProps) {
               <p className="text-gray-800 leading-relaxed mb-3">{act.description}</p>
               
               {act.image && (
+                /* eslint-disable-next-line @next/next/no-img-element */
                 <img
                   src={act.image}
                   alt="Kindness act"

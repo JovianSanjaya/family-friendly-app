@@ -6,6 +6,40 @@ interface VoiceInputProps {
   onTranscript: (text: string) => void;
 }
 
+interface SpeechRecognitionEvent {
+  results: {
+    [key: number]: {
+      [key: number]: {
+        transcript: string;
+      };
+    };
+  };
+}
+
+interface SpeechRecognitionErrorEvent {
+  error: string;
+}
+
+declare global {
+  interface Window {
+    SpeechRecognition: new () => ISpeechRecognition;
+    webkitSpeechRecognition: new () => ISpeechRecognition;
+  }
+}
+
+interface ISpeechRecognition extends EventTarget {
+  continuous: boolean;
+  interimResults: boolean;
+  lang: string;
+  onstart: (() => void) | null;
+  onresult: ((event: SpeechRecognitionEvent) => void) | null;
+  onerror: ((event: SpeechRecognitionErrorEvent) => void) | null;
+  onend: (() => void) | null;
+  start(): void;
+  stop(): void;
+  abort(): void;
+}
+
 export default function VoiceInput({ onTranscript }: VoiceInputProps) {
   const [isListening, setIsListening] = useState(false);
   const [isSupported, setIsSupported] = useState(false);
@@ -23,8 +57,8 @@ export default function VoiceInput({ onTranscript }: VoiceInputProps) {
       return;
     }
 
-    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
-    const recognition = new SpeechRecognition();
+    const SpeechRecognitionAPI = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognitionAPI();
 
     recognition.continuous = false;
     recognition.interimResults = false;
@@ -34,13 +68,13 @@ export default function VoiceInput({ onTranscript }: VoiceInputProps) {
       setIsListening(true);
     };
 
-    recognition.onresult = (event: any) => {
+    recognition.onresult = (event: SpeechRecognitionEvent) => {
       const transcript = event.results[0][0].transcript;
       onTranscript(transcript);
       setIsListening(false);
     };
 
-    recognition.onerror = (event: any) => {
+    recognition.onerror = (event: SpeechRecognitionErrorEvent) => {
       console.error('Speech recognition error:', event.error);
       setIsListening(false);
       if (event.error === 'no-speech') {

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { Chart, registerables } from 'chart.js';
-import { KindnessAct, Stats, CATEGORY_LABELS, CATEGORY_EMOJIS } from '@/types';
+import { KindnessAct, Stats, CATEGORY_LABELS } from '@/types';
 
 Chart.register(...registerables);
 

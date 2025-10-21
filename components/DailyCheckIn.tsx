@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { KindnessAct, KindnessCategory, CATEGORY_LABELS } from '@/types';
 import { formatDate, getTodayDateString } from '@/lib/utils';
 import VoiceInput from './VoiceInput';
@@ -128,6 +128,7 @@ export default function DailyCheckIn({ onSubmit, checkedInToday }: DailyCheckInP
 
           {image && (
             <div className="mb-6 relative">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={image}
                 alt="Preview"

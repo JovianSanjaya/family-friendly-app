@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { KindnessAct, Achievement, AppState } from '@/types';
+import { KindnessAct, Achievement, AppState, Stats } from '@/types';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 import { calculateStats, getTodayDateString, hasCheckedInToday } from '@/lib/utils';
 import { INITIAL_ACHIEVEMENTS, KINDNESS_QUOTES } from '@/lib/constants';
@@ -72,7 +72,7 @@ export default function KindnessTracker({ onBack }: KindnessTrackerProps = {}) {
   const checkAndUnlockAchievements = (
     acts: KindnessAct[],
     currentAchievements: Achievement[],
-    stats: any
+    stats: Stats
   ): Achievement[] => {
     return currentAchievements.map(achievement => {
       if (achievement.unlocked) return achievement;
