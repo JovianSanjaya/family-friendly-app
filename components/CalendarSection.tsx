@@ -26,6 +26,7 @@ export default function CalendarSection({ acts }: CalendarSectionProps) {
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();
     const checkDate = new Date(year, month, day);
+    checkDate.setHours(0, 0, 0, 0);
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     
@@ -34,7 +35,10 @@ export default function CalendarSection({ acts }: CalendarSectionProps) {
       return false;
     }
     
-    const dateString = new Date(year, month, day).toISOString().split('T')[0];
+    // Use local date format to match stored dates
+    const monthStr = String(month + 1).padStart(2, '0');
+    const dayStr = String(day).padStart(2, '0');
+    const dateString = `${year}-${monthStr}-${dayStr}`;
     return acts.some(act => act.date === dateString);
   };
 
