@@ -65,7 +65,43 @@ export default function LandingPage() {
               }}
               className="mb-8"
             >
-              <span className="text-9xl inline-block">✨</span>
+              <svg
+                className="inline-block w-32 h-32 md:w-40 md:h-40"
+                viewBox="0 0 36 36"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                {/* Sparkle Star */}
+                <path
+                  d="M18 2L20.5 13.5L32 16L20.5 18.5L18 30L15.5 18.5L4 16L15.5 13.5L18 2Z"
+                  fill="url(#sparkleGradient1)"
+                  stroke="white"
+                  strokeWidth="1"
+                />
+                <path
+                  d="M28 8L29 12L33 13L29 14L28 18L27 14L23 13L27 12L28 8Z"
+                  fill="url(#sparkleGradient2)"
+                  stroke="white"
+                  strokeWidth="0.5"
+                />
+                <path
+                  d="M8 8L9 12L13 13L9 14L8 18L7 14L3 13L7 12L8 8Z"
+                  fill="url(#sparkleGradient2)"
+                  stroke="white"
+                  strokeWidth="0.5"
+                />
+                <defs>
+                  <linearGradient id="sparkleGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#FFD700" />
+                    <stop offset="50%" stopColor="#FFA500" />
+                    <stop offset="100%" stopColor="#FF69B4" />
+                  </linearGradient>
+                  <linearGradient id="sparkleGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#FFF" />
+                    <stop offset="100%" stopColor="#FFD700" />
+                  </linearGradient>
+                </defs>
+              </svg>
             </motion.div>
 
             {/* Typewriter Title */}

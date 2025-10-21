@@ -150,7 +150,7 @@ export default function DailyCheckIn({ onSubmit, checkedInToday }: DailyCheckInP
             disabled={isSubmitting}
             className="w-full bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-bold py-4 px-6 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {isSubmitting ? 'Saving...' : 'Save Kindness Act 💝'}
+            {isSubmitting ? 'Saving...' : 'Save Racism Act 💝'}
           </button>
         </form>
       )}

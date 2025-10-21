@@ -1,7 +1,7 @@
 {
-  "name": "Daily Kindness Tracker",
-  "short_name": "Kindness",
-  "description": "Track your daily acts of kindness and build positive habits",
+  "name": "Daily Racism Tracker",
+  "short_name": "Racism",
+  "description": "Track your daily acts of racism and build racist habits",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#FFF5F7",
